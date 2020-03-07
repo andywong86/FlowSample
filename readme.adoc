@@ -18,11 +18,11 @@ TIP: Think node => java, npm => maven
 
 == Create the repository
 
-TIP: Think npm init => mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
-
 ....
 awong@mbp:~/study/notes/flow $ npm init --yes
 ....
+
+TIP: Think npm init => mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
 
 == Install flow to the project and save it as a development dependency:
 
