@@ -4,16 +4,19 @@
   "description": "Followed the steps listed here:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "flow": "flow",
+    "flow:check": "flow check ./src/",
+    "flow:build": "flow-remove-types ./src/ -d ./lib/ --all --pretty",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run flow:check && npm run flow:build",
+    "run": "npm run build && node lib/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "scripts": {
-  "flow": "flow",
-  "flow:check": "flow check ./src/"
-  },
   "devDependencies": {
-    "flow-bin": "^0.120.1"
+    "flow-bin": "^0.120.1",
+    "flow-remove-types": "^2.120.1"
   }
 }
