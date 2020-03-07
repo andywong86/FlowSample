@@ -9,18 +9,31 @@ https://codeburst.io/getting-started-with-flow-and-nodejs-b8442d3d2e57
 
 Just imagine the following:
 
-* node           =>  java
-* npm            =>  maven
-* package.json   =>  pom.xml
-* npm init       =>  mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
 
 
 == Install node and npm using Homebrew
+
+Think:
+* node => java
+* npm => maven
+
 ....
 awong@mbp:~/study/notes/flow $ brew install node
-awong@mbp:~/study/notes/flow $ npm init --yes
+awong@mbp:~/study/notes/flow $ node --version
+v12.6.0
+awong@mbp:~/study/notes/flow $ npm --version
+6.14.2
 ....
 
+
+== Create the repository
+
+Think:
+* npm init       =>  mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
+
+....
+awong@mbp:~/study/notes/flow $ npm init --yes
+....
 
 == Install flow to the project and save it as a development dependency:
 
@@ -35,6 +48,9 @@ awong@mbp:~/study/notes/flow $ npm install flow-typed -SD
 
 
 == Configure flow
+
+Think:
+* Configuring a custom maven extension
 
 ....
 awong@mbp:~/study/notes/flow $ touch .flowconfig
@@ -55,8 +71,8 @@ all=true
 
 == Create custom build targets for npm
 
-Package.json contains all the project related settings, and it is possible to
-add custom commands under the scripts section like custom maven targets.
+Think:
+* package.json   =>  pom.xml
 
 Add the following to package.json:
 
@@ -68,10 +84,10 @@ Add the following to package.json:
 }
 ....
 
-You run each listed target by calling:
+These are custom commands that you can run by calling:
 
 ....
-npm run {target-name}
+npm run {command-name}
 ....
 
 
