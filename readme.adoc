@@ -1,0 +1,84 @@
+== Followed the steps listed here
+
+https://codeburst.io/getting-started-with-flow-and-nodejs-b8442d3d2e57
+
+
+== Intuition
+
+node           =>  java
+npm            =>  maven
+package.json   =>  pom.xml
+npm init       =>  mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
+
+
+== Install node and npm using Homebrew
+
+awong@mbp:~/study/notes/flow $ brew install node
+awong@mbp:~/study/notes/flow $ npm init --yes
+
+
+== Install flow to the project and save it as a development dependency:
+
+Instead of storing the downloaded libraries in ~/.m2 directory, node modules
+are installed in the node_modules subdirectory.
+
+awong@mbp:~/study/notes/flow $ npm install flow-bin -SD
+awong@mbp:~/study/notes/flow $ npm install flow-remove-types -SD
+awong@mbp:~/study/notes/flow $ npm install flow-typed -SD
+
+
+== Configure flow
+
+awong@mbp:~/study/notes/flow $ touch .flowconfig
+
+Populate .flowconfig with settings
+
+[ignore]
+.*/node_modules/.*
+[include]
+[libs]
+flow-typed
+[options]
+all=true
+
+
+== Create custom build targets for npm
+
+Package.json contains all the project related settings, and it is possible to
+add custom commands under the scripts section like custom maven targets.
+
+Add the following to package.json:
+
+"scripts": {
+  "flow": "flow",
+  "flow:check": "flow check ./src/",
+  "flow:build": "flow-remove-types ./src/ -d ./lib/ --all --pretty",
+}
+
+You run each listed target by calling:
+
+npm run {target-name}
+
+
+== Create the source code
+
+awong@mbp:~/study/notes/flow $ mkdir src
+awong@mbp:~/study/notes/flow $ touch src/index.js
+
+Populate src/index.js with the following
+
+type Point2d = {|
+  x: number,
+  y: number
+|};
+const myPoint: Point2d = {
+  X: 1,
+  y: 2
+};
+console.log(myPoint.x, myPoint.y);
+
+
+== Try running flow
+
+awong@mbp:~/study/notes/flow $ npm run flow:check
+awong@mbp:~/study/notes/flow $ npm run flow:build

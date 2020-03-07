@@ -1,0 +1,19 @@
+{
+  "name": "flow",
+  "version": "1.0.0",
+  "description": "Followed the steps listed here:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+  "flow": "flow",
+  "flow:check": "flow check ./src/"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.120.1"
+  }
+}
