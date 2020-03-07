@@ -1,13 +1,9 @@
-== Followed the steps listed here
-
-This repository contains an abridged version of the following tutorial:
+This repository is an abridged version of this tutorial:
 
 https://codeburst.io/getting-started-with-flow-and-nodejs-b8442d3d2e57
 
 
 == Install node and npm using Homebrew
-
-TIP: Think node => java, npm => maven
 
 ....
 awong@mbp:~/study/notes/flow $ brew install node
@@ -16,6 +12,8 @@ v12.6.0
 awong@mbp:~/study/notes/flow $ npm --version
 6.14.2
 ....
+
+TIP: Think node => java, npm => maven
 
 
 == Create the repository
@@ -28,19 +26,16 @@ awong@mbp:~/study/notes/flow $ npm init --yes
 
 == Install flow to the project and save it as a development dependency:
 
-TIP: Instead of storing the downloaded libraries in ~/.m2 directory, node modules
-are installed in the node_modules subdirectory.
-
 ....
 awong@mbp:~/study/notes/flow $ npm install flow-bin -SD
 awong@mbp:~/study/notes/flow $ npm install flow-remove-types -SD
 awong@mbp:~/study/notes/flow $ npm install flow-typed -SD
 ....
 
+TIP: Instead of storing the downloaded libraries in ~/.m2 directory, node modules
+are installed in the node_modules subdirectory.
 
 == Configure flow
-
-TIP: This is just like configuring a custom maven plugin
 
 ....
 awong@mbp:~/study/notes/flow $ touch .flowconfig
@@ -58,10 +53,11 @@ flow-typed
 all=true
 ....
 
+TIP: This is just like configuring a custom maven plugin
+
 
 == Create custom build targets for npm
 
-TIP: Think package.json => pom.xml
 
 Add the following to package.json:
 
@@ -78,6 +74,9 @@ These are custom commands that you can run by calling:
 ....
 npm run {command-name}
 ....
+
+
+TIP: Think package.json => pom.xml
 
 
 == Create the source code
