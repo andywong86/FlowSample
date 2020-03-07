@@ -5,17 +5,10 @@ This repository contains an abridged version of the following tutorial:
 https://codeburst.io/getting-started-with-flow-and-nodejs-b8442d3d2e57
 
 
-== Intuition
-
-Just imagine the following:
-
-
-
 == Install node and npm using Homebrew
 
-Think:
-* node => java
-* npm => maven
+TIP: node => java
+TIP: npm => maven
 
 ....
 awong@mbp:~/study/notes/flow $ brew install node
@@ -28,8 +21,7 @@ awong@mbp:~/study/notes/flow $ npm --version
 
 == Create the repository
 
-Think:
-* npm init       =>  mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
+TIP: npm init => mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart 
 
 ....
 awong@mbp:~/study/notes/flow $ npm init --yes
@@ -37,7 +29,7 @@ awong@mbp:~/study/notes/flow $ npm init --yes
 
 == Install flow to the project and save it as a development dependency:
 
-Instead of storing the downloaded libraries in ~/.m2 directory, node modules
+TIP: Instead of storing the downloaded libraries in ~/.m2 directory, node modules
 are installed in the node_modules subdirectory.
 
 ....
@@ -49,8 +41,7 @@ awong@mbp:~/study/notes/flow $ npm install flow-typed -SD
 
 == Configure flow
 
-Think:
-* Configuring a custom maven extension
+TIP: This is just like configuring a custom maven plugin
 
 ....
 awong@mbp:~/study/notes/flow $ touch .flowconfig
@@ -71,8 +62,7 @@ all=true
 
 == Create custom build targets for npm
 
-Think:
-* package.json   =>  pom.xml
+TIP: package.json => pom.xml
 
 Add the following to package.json:
 
